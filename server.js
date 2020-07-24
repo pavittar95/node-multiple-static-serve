@@ -10,10 +10,10 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, "build/app")));
 
-app.use('/leads', express.static(path.join(__dirname, "build/leads")));
+app.use(express.static(path.join(__dirname, "build/leads")));
 
 app.get("/leads", (req, res) => {
-  res.sendFile(path.join(__dirname + "/build/leads/index.html"));
+  res.sendFile(path.join(__dirname, "/build/leads/index.html"));
 });
 
 app.get("/*", (req, res) => {
